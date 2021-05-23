@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="flex-container">
+        <div class="text-editor">
+            <textarea name="input" id="" cols="30" rows="10"><H1>YO</H1></textarea>
+            <input type="button" value="run" onclick="run(this)">
+        </div>
+        <div class="screen">
+        </div>
+    </div>
+    <!--<script>
+            function htmlToElements(html) {
+                var template = document.createElement('template');
+                template.innerHTML = html;
+                return template.content.childNodes;
+            }
+        const run = (e) => {
+            //console.log(e.value);
+            const html = e.previousElementSibling;
+            //console.log(html); 
+            const scrn = html.parentElement.nextElementSibling;
+            var add = document.createElement('h1');
+            //add.innerHTML = "hi"
+            //console.log(scrn);
+            scrn.appendChild(add);
+            //htmlTodo = html.value.trim();
+            //console.log(htmlTodo);
+            const nodeList = htmlToElements(htmlTodo);
+            const div = document.createElement('div');
+            nodeList.forEach(element => {
+                div.appendChild(element)
+            });
+            scrn.appendChild(div)
+        }
+    </script>-->
+{% endblock %}
