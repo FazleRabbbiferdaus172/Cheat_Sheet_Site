@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if htmlmodel_list %}
+        {% for i in htmlmodel_list %}
+            <div class="cheatpost">
+                <h1>{{ i.title }}</h1>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>No CheatSheet</h1>
+    {% endif %}
+{% endblock %}
