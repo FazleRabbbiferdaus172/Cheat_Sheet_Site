@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ htmlmodel.title }}</h1>
+    <p>{{ htmlmodel.description|safe|linebreaksbr }}</p>
+    <div class="flex-container">
+        <div class="text-editor ">
+            <textarea name="input" class="noscroll" id="" cols="30" rows="10">{{ htmlmodel.example_html }}</textarea>
+            <input type="button" value="run" onclick="run(this)">
+        </div>
+        <div class="screen noscroll">
+        </div>
+    </div>
+{% endblock %}

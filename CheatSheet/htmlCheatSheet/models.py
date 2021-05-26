@@ -11,6 +11,10 @@ class HtmlModel(models.Model):
     def get_absolute_url(self):
         return reverse("htmlpage")
 
+    def min_text(self):
+        x = min(50, len(self.description))
+        return self.description[:x]
+
     def __str__(self):
         return self.title
 

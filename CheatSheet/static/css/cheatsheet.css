@@ -71,3 +71,16 @@ textarea{
     border: none;
 }
 
+.noscroll::-webkit-scrollbar {
+    display: none;
+  }
+
+.cheatpost{
+    width: 100%;
+    height: 200px;
+    border: solid 2px var(--primary100);
+    background-color: var(--primary200);
+    border-radius: .75%;
+    color: white;
+    margin-bottom: 10px;
+}

@@ -3,7 +3,10 @@
     {% if htmlmodel_list %}
         {% for i in htmlmodel_list %}
             <div class="cheatpost">
-                <h1>{{ i.title }}</h1>
+                <h1><a href="{% url 'htmlCheatSheet:cheat_detail' pk=i.pk %}" class="listtitle">
+                    {{ i.title }}
+                </a></h1>
+                <p>{{ i.min_text }}</p>
             </div>
         {% endfor %}
     {% else %}
