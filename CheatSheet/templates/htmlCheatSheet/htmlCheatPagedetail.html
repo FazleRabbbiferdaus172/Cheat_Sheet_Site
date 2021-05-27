@@ -10,4 +10,19 @@
         <div class="screen noscroll">
         </div>
     </div>
+    <div class="comment-container">
+        <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add comment</button>
+        </form>
+    </div>
+    <div class="container flex-comment">
+        {% for comment in htmlmodel.comments.all %}
+            <div class="comment-card">
+            <p>{{ comment.text|safe|linebreaks }}</p>
+            <p>Posted By: {{ comment.author }}</p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

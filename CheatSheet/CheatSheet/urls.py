@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from htmlCheatSheet import views
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.HtmlModelListView.as_view(), name='index'),
     url(r'^html/', include('htmlCheatSheet.urls')),
     url(r'^admin/', admin.site.urls),
 ]
