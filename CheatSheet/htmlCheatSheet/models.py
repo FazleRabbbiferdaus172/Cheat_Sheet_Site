@@ -9,7 +9,7 @@ class HtmlModel(models.Model):
     example_html = models.TextField()
 
     def get_absolute_url(self):
-        return reverse("htmlpage")
+        return reverse("htmlCheatSheet:cheat_detail", kwargs={'pk': self.pk})
 
     def min_text(self):
         x = min(50, len(self.description))

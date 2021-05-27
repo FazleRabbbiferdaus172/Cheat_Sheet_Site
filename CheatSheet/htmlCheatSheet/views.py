@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (
-    TemplateView, CreateView, ListView, DetailView)
+    TemplateView, CreateView, ListView, DetailView, DeleteView)
 from htmlCheatSheet.models import HtmlModel
 from htmlCheatSheet.forms import HtmlModelForm, CommentModelForm
 from django.views.generic.edit import FormMixin
 from django.urls import reverse
-from django.http import HttpResponseForbidden
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
@@ -22,7 +22,9 @@ class HtmlModelListView(ListView):
     template_name = 'htmlCheatSheet/htmlCheatPageList.html'
 
 
-class CreateHtmlModelView(CreateView):
+class CreateHtmlModelView(LoginRequiredMixin, CreateView):
+    login_url = '/login/'
+    redirect_field_name = 'htmlCheatSheet/htmlCheatPagedetail.html'
     form_class = HtmlModelForm
     model = HtmlModel
     template_name = 'htmlCheatSheet/htmlmodel_form.html'
