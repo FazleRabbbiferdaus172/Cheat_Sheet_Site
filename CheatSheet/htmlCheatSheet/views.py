@@ -9,8 +9,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
-def index(request):
-    return render(request, 'base.html')
+def about(request):
+    context = {
+        'github': "https://github.com/FazleRabbbiferdaus172",
+        "linkedin": "https://www.linkedin.com/in/fazle-rabbi-ferdaus-113255185/"
+    }
+    return render(request, 'about.html', context=context)
 
 
 class HtmlCheatPage(TemplateView):

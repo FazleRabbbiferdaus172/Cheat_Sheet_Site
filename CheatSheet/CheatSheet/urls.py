@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from htmlCheatSheet.views import HtmlModelListView
+from htmlCheatSheet.views import HtmlModelListView, about
 from django.contrib.auth import views
 urlpatterns = [
     url(r'^$', HtmlModelListView.as_view(), name='index'),
+    url(r'^about/', about, name='about'),
     url(r'^html/', include('htmlCheatSheet.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'accounts/login/$', views.login, name='login'),
