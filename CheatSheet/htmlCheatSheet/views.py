@@ -6,6 +6,7 @@ from htmlCheatSheet.forms import HtmlModelForm, CommentModelForm
 from django.views.generic.edit import FormMixin
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -39,6 +40,11 @@ class HtmlModelUpdateView(LoginRequiredMixin, UpdateView):
     redirect_field_name = 'htmlCheatSheet/htmlCheatPagedetail.html'
     form_class = HtmlModelForm
     model = HtmlModel
+
+
+class HtmlModelDeleteView(LoginRequiredMixin, DeleteView):
+    model = HtmlModel
+    success_url = reverse_lazy('htmlCheatSheet:htmllist')
 
 
 class HtmlModelDetailView(FormMixin, DetailView):

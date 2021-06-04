@@ -9,5 +9,7 @@ urlpatterns = [
     url(r'^cheat/(?P<pk>\d+)$',
         views.HtmlModelDetailView.as_view(), name='cheat_detail'),
     url(r'^cheat/(?P<pk>\d+)/edit/$',
-        views.HtmlModelUpdateView.as_view(), name='cheat_edit')
+        views.HtmlModelUpdateView.as_view(), name='cheat_edit'),
+    url(r'^cheat/(?P<pk>\d+)/delete/$',
+        views.HtmlModelDeleteView.as_view(), name='cheat_delete'),
 ]
