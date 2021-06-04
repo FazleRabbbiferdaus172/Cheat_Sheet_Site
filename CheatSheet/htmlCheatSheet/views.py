@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (
-    TemplateView, CreateView, ListView, DetailView, DeleteView)
+    TemplateView, CreateView, ListView, DetailView, UpdateView, DeleteView)
 from htmlCheatSheet.models import HtmlModel
 from htmlCheatSheet.forms import HtmlModelForm, CommentModelForm
 from django.views.generic.edit import FormMixin
@@ -32,6 +32,13 @@ class CreateHtmlModelView(LoginRequiredMixin, CreateView):
     form_class = HtmlModelForm
     model = HtmlModel
     template_name = 'htmlCheatSheet/htmlmodel_form.html'
+
+
+class HtmlModelUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = '/login/'
+    redirect_field_name = 'htmlCheatSheet/htmlCheatPagedetail.html'
+    form_class = HtmlModelForm
+    model = HtmlModel
 
 
 class HtmlModelDetailView(FormMixin, DetailView):

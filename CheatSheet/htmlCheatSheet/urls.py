@@ -7,5 +7,7 @@ urlpatterns = [
     url(r'^new/', views.CreateHtmlModelView.as_view(), name="post_new"),
     url(r'^list', views.HtmlModelListView.as_view(), name='htmllist'),
     url(r'^cheat/(?P<pk>\d+)$',
-        views.HtmlModelDetailView.as_view(), name='cheat_detail')
+        views.HtmlModelDetailView.as_view(), name='cheat_detail'),
+    url(r'^cheat/(?P<pk>\d+)/edit/$',
+        views.HtmlModelUpdateView.as_view(), name='cheat_edit')
 ]
