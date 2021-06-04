@@ -7,8 +7,10 @@
                     {{ i.title }}
                 </a></h1>
                 <p>{{ i.min_text }}</p>
+                {% if user.is_authenticated %}
                 <a href="{% url 'htmlCheatSheet:cheat_edit' pk=i.pk %}" class="btn btn-primary">Edit</a>
                 <a href="{% url 'htmlCheatSheet:cheat_delete' pk=i.pk %}" class="btn btn-primary btn-warning">Delete</a>
+                {% endif %}
             </div>
         {% endfor %}
     {% else %}
